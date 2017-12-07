@@ -18,3 +18,21 @@
 - [MapReduce入门](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop.MapReduce.md)
 - [Hdfs介绍](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop.hdfs.md)
 - [Hadoop集群搭建摘要](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%91%98%E8%A6%81.md)
+- [Kafka 文档（二）快速上手](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Kafka%20%E6%96%87%E6%A1%A3%EF%BC%88%E4%BA%8C%EF%BC%89%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B.md)
+- [Redis入门](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Redis.brief.md)
+- [搭建Zookeeper集群](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Zookeeper.install.distributed.md)
+- [kafka 文档（一）简介](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/kafka%20%E6%96%87%E6%A1%A3%EF%BC%88%E4%B8%80%EF%BC%89%E7%AE%80%E4%BB%8B.md)
+- [kafka源码解读Producer（一）装载配置文件](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/kafka%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BBProducer%EF%BC%88%E4%B8%80%EF%BC%89%E8%A3%85%E8%BD%BD%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.md)
+- [kafka源码解读Producer（二）KafkaProducer构造方法](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/kafka%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BBProducer%EF%BC%88%E4%BA%8C%EF%BC%89KafkaProducer%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.md)
+- [sqoop导入mysql遇到的问题](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/sqoop%E5%AF%BC%E5%85%A5mysql%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98.md)
+
+
+
+
+
+
+
+
+
+
+
