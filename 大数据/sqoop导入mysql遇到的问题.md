@@ -20,6 +20,7 @@ hive表生成的null字段用\N表示，导入到mysql就会显示为\N，如果
 在此翻看sqoop文档，发现sqoop-export 中有对NULL的特别处理，见[sqoop官方文档](http://sqoop.apache.org/docs/1.4.6/SqoopUserGuide.html#_syntax_4)。导出语法控制参数（Export control arguments）。
 
 | Argument      |    Description |  翻译  |
+
 | :-------- |: -------- ||: -------- | 
 | --input-null-string <null-string>  | The string to be interpreted as null for string columns | 当字段为字符串类型时（varchar,char等），指定值会被转换为nulll导入|
 | --input-null-non-string <null-string>  | The string to be interpreted as null for non-string columns | 当字段为非字符串类型时（Int,long等），指定值会被转换为nulll导入|
