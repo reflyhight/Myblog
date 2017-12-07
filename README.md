@@ -12,3 +12,9 @@
 - [Java中的时区设置](https://github.com/reflyhight/myBlog/blob/master/java/java%E4%B8%AD%E7%9A%84%E6%97%B6%E5%8C%BA%E8%AE%BE%E7%BD%AE.md)
 
 - [单例模式与多线程](https://github.com/reflyhight/myBlog/blob/master/java/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B.md)
+
+### 大数据
+- [快速搭建CDH](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/CDH.installer.md)
+- [MapReduce入门](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop.MapReduce.md)
+- [Hdfs介绍](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop.hdfs.md)
+- [Hadoop集群搭建摘要](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/Hadoop%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA%E6%91%98%E8%A6%81.md)
