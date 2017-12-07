@@ -26,6 +26,32 @@
 - [kafka源码解读Producer（二）KafkaProducer构造方法](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/kafka%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BBProducer%EF%BC%88%E4%BA%8C%EF%BC%89KafkaProducer%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95.md)
 - [sqoop导入mysql遇到的问题](https://github.com/reflyhight/myBlog/blob/master/%E5%A4%A7%E6%95%B0%E6%8D%AE/sqoop%E5%AF%BC%E5%85%A5mysql%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98.md)
 
+### Python
+- [Python编程(一)认识python](https://github.com/reflyhight/myBlog/blob/master/python/Python%E7%BC%96%E7%A8%8B(%E4%B8%80)%E8%AE%A4%E8%AF%86python.md)
+- [Python编程(二)基本数据类型和变量](https://github.com/reflyhight/myBlog/blob/master/python/Python%E7%BC%96%E7%A8%8B(%E4%BA%8C)%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F.md)
+- [Python包管理](https://github.com/reflyhight/myBlog/blob/master/python/Python%E5%8C%85%E7%AE%A1%E7%90%86.md)
+- [Python开发准备](https://github.com/reflyhight/myBlog/blob/master/python/Python%E5%BC%80%E5%8F%91%E5%87%86%E5%A4%87.md)
+
+### 综合
+- [cron表达式](https://github.com/reflyhight/myBlog/blob/master/%E7%BB%BC%E5%90%88/cron%E8%A1%A8%E8%BE%BE%E5%BC%8F.md)
+- [人工智能来了](https://github.com/reflyhight/myBlog/blob/master/%E7%BB%BC%E5%90%88/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E6%9D%A5%E4%BA%86.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
