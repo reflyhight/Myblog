@@ -1,14 +1,3 @@
-title: Hive常见操作.md
-tags: 
-	- hive
-	- sql
-
-categories:
-	- 大数据
-
-
--------------------
-
 > Hive官网的手册很详尽，基本上参考就能轻松运用hive [Wiki](https://cwiki.apache.org/confluence/display/Hive/Home)
  
 [toc]
@@ -17,7 +6,7 @@ categories:
 hive cli指的是`$HIVE_HOME/bin/hive`命令
  
 ####    Hive Command Line Options（命令行选项）
-使用    `$HIVE_HOME/bin/hive -H`   或者 $HIVE_HOME/bin/hive --help查看hive cli的命令选项      详见[Wiki原文](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveCommandLineOptions)
+使用    `$HIVE_HOME/bin/hive -H`   或者 $HIVE_HOME/bin/hive --help查看hive cli的命令选项      详见[Wiki](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveCommandLineOptions)
 ```
  -d,--define <key=value>         申明变量    -d date='20171207'
  -e <quoted-query-string>        执行指定脚本    -e "select * from tb1"
@@ -42,10 +31,10 @@ hive cli指的是`$HIVE_HOME/bin/hive`命令
 - **set** <key>=<value>    设置配置。如果没忘记写配置名，那么不会报错，只会警告
 - **set**    打印配置，包括用户定义覆盖和Hive自带的
 - **set -v**    打印所有hadoop和hive的配置变量
-- **add FILE[S] <filepath> <filepath>***        添加文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
+- **add FILE[S] <filepath> <filepath>*  **        添加文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
 - **add JAR[S] <filepath> <filepath>*    **    添加jar文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
 - **add ARCHIVE[S] <filepath> <filepath>*   **  添加压缩文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
-- **add  FILE[S] **   |  **add JAR[S]**  | **add ARCHIVE[S]**   在Version 1.2.0后支持   ivyurl的形式我，见[LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-TooltoClearDanglingScratchDirectories)
+- **add  FILE[S]**   |  **add JAR[S]**  | **add ARCHIVE[S]**   在Version 1.2.0后支持   ivyurl的形式我，见[LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-TooltoClearDanglingScratchDirectories)
  
 - **list FILE[S]**    列出加入分布式缓存中的文件
 - **list JAR[S] **   列出加入分布式缓存中的Jar
@@ -183,16 +172,6 @@ age
 
 
 ###    HiveServer2 and Beeline
-hive 2.x 以后引入了HiveServer2，HiveServer2拥有自己CLI，叫Beeline，Hive CLI会在不久的将来过时，而建议使用Beeline替代它      详见[Wiki原文](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-DeprecationinfavorofBeelineCLI)
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+hive 2.x 以后引入了HiveServer2，HiveServer2拥有自己CLI，叫Beeline，Hive CLI会在不久的将来过时，而建议使用Beeline替代它      详见[Wiki](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-DeprecationinfavorofBeelineCLI)
  
  
