@@ -26,7 +26,7 @@ hive cli指的是`$HIVE_HOME/bin/hive`命令
 ###   LanguageManual Commands（支持命令）
 这些命令都并非sql语句，可以使用在HiveQL或者直接使用在CLI 、 Beeline中
  
-- **quit、exit**    退出交互式shell   (CLI 、 Beeline)
+- `quit、exit`    退出交互式shell   (CLI 、 Beeline)
 - **reset**    将配置重置为默认值，任意配置参数无论是使用set命令或者-hiveconf 设置的参数都会被重置为默认值。注意使用hiveconf:为前缀的参数不会被重置（历史原因造成）
 - **set** <key>=<value>    设置配置。如果没忘记写配置名，那么不会报错，只会警告
 - **set**    打印配置，包括用户定义覆盖和Hive自带的
@@ -40,7 +40,7 @@ hive cli指的是`$HIVE_HOME/bin/hive`命令
 - **list JAR[S] **   列出加入分布式缓存中的Jar
 - **list ARCHIVE[S] **   列出加入分布式缓存中的ARCHIVE
  
-- **delete FILE[S] <filepath>\*  **  删除分布式缓存的文件
+- `delete FILE[S] <filepath>*  `  删除分布式缓存的文件
 - **delete JAR[S] <filepath>*  **  删除分布式缓存的JAR
 - **delete ARCHIVE[S] <filepath>*  **   删除分布式缓存的ARCHIVE
 - **delete FILE[S] <ivyurl> <ivyurl>*  **  | **  delete JAR[S] <ivyurl> <ivyurl>* **  | ** delete ARCHIVE[S] <ivyurl> <ivyurl>*  **  在Hive 1.2.0后被支持
