@@ -27,7 +27,7 @@ hive cli指的是`$HIVE_HOME/bin/hive`命令
 这些命令都并非sql语句，可以使用在HiveQL或者直接使用在CLI 、 Beeline中
  
 - `quit、exit`    退出交互式shell   (CLI 、 Beeline)
-- **reset**    将配置重置为默认值，任意配置参数无论是使用set命令或者-hiveconf 设置的参数都会被重置为默认值。注意使用hiveconf:为前缀的参数不会被重置（历史原因造成）
+- `reset**    将配置重置为默认值，任意配置参数无论是使用set命令或者-hiveconf 设置的参数都会被重置为默认值。注意使用hiveconf:为前缀的参数不会被重置（历史原因造成）
 - **set** <key>=<value>    设置配置。如果没忘记写配置名，那么不会报错，只会警告
 - **set**    打印配置，包括用户定义覆盖和Hive自带的
 - **set -v**    打印所有hadoop和hive的配置变量
