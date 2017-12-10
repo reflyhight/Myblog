@@ -40,7 +40,7 @@ hive cli指的是`$HIVE_HOME/bin/hive`命令
 - **list JAR[S] **   列出加入分布式缓存中的Jar
 - **list ARCHIVE[S] **   列出加入分布式缓存中的ARCHIVE
  
-- **delete FILE[S] <filepath>*  **  删除分布式缓存的文件
+- **delete FILE[S] <filepath>\*  **  删除分布式缓存的文件
 - **delete JAR[S] <filepath>*  **  删除分布式缓存的JAR
 - **delete ARCHIVE[S] <filepath>*  **   删除分布式缓存的ARCHIVE
 - **delete FILE[S] <ivyurl> <ivyurl>*  **  | **  delete JAR[S] <ivyurl> <ivyurl>* **  | ** delete ARCHIVE[S] <ivyurl> <ivyurl>*  **  在Hive 1.2.0后被支持
