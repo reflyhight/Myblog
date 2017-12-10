@@ -31,7 +31,7 @@ hive cli指的是`$HIVE_HOME/bin/hive`命令
 - **set** <key>=<value>    设置配置。如果没忘记写配置名，那么不会报错，只会警告
 - **set**    打印配置，包括用户定义覆盖和Hive自带的
 - **set -v**    打印所有hadoop和hive的配置变量
-- **add FILE[S] <filepath> <filepath>*  **        添加文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
+- **add FILE[S] <filepath> <filepath>\*  **        添加文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
 - **add JAR[S] <filepath> <filepath>*    **    添加jar文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
 - **add ARCHIVE[S] <filepath> <filepath>*   **  添加压缩文件到分布式缓存中，可以参考[Resources](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-HiveResources)的相关说明
 - **add  FILE[S]**   |  **add JAR[S]**  | **add ARCHIVE[S]**   在Version 1.2.0后支持   ivyurl的形式我，见[LanguageManual](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Cli#LanguageManualCli-TooltoClearDanglingScratchDirectories)
