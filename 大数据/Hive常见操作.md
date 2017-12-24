@@ -1,7 +1,3 @@
-> Hive官网的手册很详尽，基本上参考就能轻松运用hive [Wiki](https://cwiki.apache.org/confluence/display/Hive/Home)
- 
-
- 
 ###    Hive CLI（命令行）
 hive cli指的是`$HIVE_HOME/bin/hive`命令
  
@@ -139,7 +135,7 @@ load data local inpath './type.test.data'   into table typedemo;
 hive (test)> select numerict,datet,datet2,stringt,varchart,chart from typedemo;
 OK
 numerict        datet   datet2  stringt varchart        chart
-1       2017-12-09 21:41:00     2017-12-09      str     vchar   char                                            
+1       2017-12-09 21:41:00     2017-12-09      str     vchar   char                                           
 Time taken: 0.105 seconds, Fetched: 1 row(s)
  
 hive (test)> select booleant,binaryt,arrayst,mapt,structt from typedemo;
@@ -216,8 +212,9 @@ USE DEFAULT;
  
 ####    Create/Drop/Truncate Table
 **Create Table**
-这个就有点儿长
+创建表的方式语句有两种：
 ```
+#方式一，创建新表的完整格式
 CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name    -- (Note: TEMPORARY available in Hive 0.14.0 and later)
   [(col_name data_type [COMMENT col_comment], ... [constraint_specification])]
   [COMMENT table_comment]
@@ -235,17 +232,22 @@ CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name    -- (
   [TBLPROPERTIES (property_name=property_value, ...)]   -- (Note: Available in Hive 0.6.0 and later)
   [AS select_statement];   -- (Note: Available in Hive 0.5.0 and later; not supported for external tables)
  
+#方式二，使用已有表的表结构
 CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name
   LIKE existing_table_or_view_name
   [LOCATION hdfs_path];
- 
+```
+上述结构中具体定义变量可以为：
+```
+#数据类型
 data_type
-  : primitive_type
-  | array_type
-  | map_type
-  | struct_type
-  | union_type  -- (Note: Available in Hive 0.7.0 and later)
+  : primitive_type    #基本类型
+  | array_type    #数组类型
+  | map_type    #map类型
+  | struct_type    #自定义结构化类型
+  | union_type  -- (Note: Available in Hive 0.7.0 and later)    #组合类型
  
+#基本类型包括
 primitive_type
   : TINYINT
   | SMALLINT
@@ -264,24 +266,30 @@ primitive_type
   | VARCHAR     -- (Note: Available in Hive 0.12.0 and later)
   | CHAR        -- (Note: Available in Hive 0.13.0 and later)
  
+#数组类型
 array_type
   : ARRAY < data_type >
  
+#map类型
 map_type
   : MAP < primitive_type, data_type >
  
+#结构化类型
 struct_type
   : STRUCT < col_name : data_type [COMMENT col_comment], ...>
  
+#组合类型
 union_type
    : UNIONTYPE < data_type, data_type, ... >  -- (Note: Available in Hive 0.7.0 and later)
  
+#行列格式化
 row_format
   : DELIMITED [FIELDS TERMINATED BY char [ESCAPED BY char]] [COLLECTION ITEMS TERMINATED BY char]
         [MAP KEYS TERMINATED BY char] [LINES TERMINATED BY char]
         [NULL DEFINED AS char]   -- (Note: Available in Hive 0.13 and later)
   | SERDE serde_name [WITH SERDEPROPERTIES (property_name=property_value, property_name=property_value, ...)]
  
+#存储类型
 file_format:
   : SEQUENCEFILE
   | TEXTFILE    -- (Default, depending on hive.default.fileformat configuration)
@@ -291,10 +299,12 @@ file_format:
   | AVRO        -- (Note: Available in Hive 0.14.0 and later)
   | INPUTFORMAT input_format_classname OUTPUTFORMAT output_format_classname
  
+#表约束，键
 constraint_specification:
   : [, PRIMARY KEY (col_name, ...) DISABLE NOVALIDATE ]
     [, CONSTRAINT constraint_name FOREIGN KEY (col_name, ...) REFERENCES table_name(col_name, ...) DISABLE NOVALIDATE
 ```
+ 
  
 **创建表：**
 - 创建给定定义表明的表，存在同名表会抛出错误，可以使用IF NOT EXISTS 语句来防止报错。
@@ -302,7 +312,7 @@ constraint_specification:
 - 0.12版本和0.12之前，只有字母和下划线才能被定义为表名或者列名
 - 0.13后支持所有的unicode
 - 表和列的`注释`都是字符串
-- 不加EXTERNAL定义的表为`管理表`（managed table）加EXTERNAL定义的表叫做`外部表`（external table），查看表是外部表还是管理表可以使用[ DESCRIBE EXTENDED table_name 语句](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-DescribeTable/View/Column) 
+- 不加EXTERNAL定义的表为`管理表`（managed table）加EXTERNAL定义的表叫做`外部表`（external table），查看表是外部表还是管理表可以使用[ DESCRIBE EXTENDED table_name ](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-DescribeTable/View/Column) 或 [DESCRIBE FORMATTED table_name](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-DescribeTable/View/Column)语句
 - `表属性`（TBLPROPERTIES）定义语句允许你定义自己k-v形式的元数据，一些预定义的表属性已经存在，如last_modified_user ，last_modified_time会自动被Hive加上，其他的预定义的属性包括
    - TBLPROPERTIES ("comment"="table_comment")
    - TBLPROPERTIES ("hbase.table.name"="table_name") – see HBase Integration.
@@ -316,20 +326,31 @@ constraint_specification:
    -  TBLPROPERTIES ("auto.purge"="true") or ("auto.purge"="false") in release 1.2.0+ (HIVE-9118) – see Drop Table, Drop Partitions, Truncate Table, and Insert Overwrite.
    -  TBLPROPERTIES ("EXTERNAL"="TRUE") in release 0.6.0+ (HIVE-1329) – Change a managed table to an external table and vice versa for "FALSE". 2.4.0后
 "EXTERNAL"属性由str型改为boolean形
-
+ 
 - 更多关于 `注释`，`表属性`，`序列化`，参考[Alter Table](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-AlterTable)
-
+ 
 - 更多数据类型查看[Type System](https://cwiki.apache.org/confluence/display/Hive/Tutorial#Tutorial-TypeSystem) [ Hive Data Types](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Types)
-
+ 
 **管理表和外部表**：
 - 管理表，默认创建的表都是管理表（不加External申明），管理表的`数据文件`，`元数据`，`计算statistics`都有Hive自身管理。管理表的数据被保管在默认[hive.metastore.warehouse.dir](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-hive.metastore.warehouse.dir) 路劲下,默认路径可以被 location 定义覆盖
 - 外部表，An external table describes the metadata / schema on external files. External table files can be accessed and managed by processes outside of Hive.(这句话的意思就是说:一个外部表的元数据信息可以在外部文件中描述，外部表可以被Hive以外程序管理和使用。【这句话我不是很明白】）外部表的分区结构如果被修改了，[MSCK REPAIR TABLE table_name ](https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL#LanguageManualDDL-RecoverPartitions(MSCKREPAIRTABLE))，[相关博客](http://blog.csdn.net/opensure/article/details/51323220)
 - [Statistics](https://cwiki.apache.org/confluence/display/Hive/StatsDev) can be managed on internal and external tables and partitions for query optimization. (这句的意思是，内部表（管理表）和外部表中一些统计可以对查询做优化【暂时不明白它的真正意思】）
-
+ 
 **存储格式**
 - Hive支持内置格式和自定义的格式，压缩存储详见[CompressedStorage](https://cwiki.apache.org/confluence/display/Hive/CompressedStorage)
 - 内置格式如下列表：
 
+```
+1.STORED AS TEXTFILE   默认存储格式，纯文本，Hive的默认存储方式，除非定义配置项[hive.default.fileformat](https://cwiki.apache.org/confluence/display/Hive/Configuration+Properties#ConfigurationProperties-hive.default.fileformat)，在这种存储方式里可以使用DELIMITED 语句指定分隔符，同事可以使用ESCAPED BY语句，ESCAPED BY可以避免分割符转义，NULL DEFINED AS语句可以指定NULL值的实际存储方式，默认的是\N
+2.STORED AS SEQUENCEFILE    用Sequence File的方式存储，Sequence File是Hadoop中支持的一种标准的文件格式。有空再查阅一下😂
+3.STORED AS ORC    使用ORC文件存储
+4.STORED AS PARQUET    使用PARQUET文件存储
+5.STORED AS AVRO    使用AVRO文件存储
+6.STORED AS RCFILE    使用RCFILE文件存储
+7.STORED BY    这个比较特殊，使用非本地存储，如指定存储为[Hbase link](https://cwiki.apache.org/confluence/display/Hive/HBaseIntegration)的方式
+8.INPUTFORMAT and OUTPUTFORMAT   指定MapReduce输入，输出格式化类
+```
 
 未完待续。。
+
  
