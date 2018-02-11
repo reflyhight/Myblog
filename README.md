@@ -39,7 +39,7 @@
 ### 爬虫
 - [实现Java的分布式爬虫（一）总体思路](https://github.com/reflyhight/myBlog/blob/master/%E7%88%AC%E8%99%AB/%E5%AE%9E%E7%8E%B0Java%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%80%EF%BC%89%E6%80%BB%E4%BD%93%E6%80%9D%E8%B7%AF.md)
 - [实现Java的分布式爬虫（二）Webmagic源码解读](https://github.com/reflyhight/myBlog/blob/master/%E7%88%AC%E8%99%AB/%E5%AE%9E%E7%8E%B0Java%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%EF%BC%88%E4%BA%8C%EF%BC%89Webmagic%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB.md)
-
+- [实现Java的分布式爬虫（三）任务调度框架Quartz](https://github.com/reflyhight/myBlog/blob/master/%E7%88%AC%E8%99%AB/%E5%AE%9E%E7%8E%B0Java%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E7%88%AC%E8%99%AB%EF%BC%88%E4%B8%89%EF%BC%89%E4%BB%BB%E5%8A%A1%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6Quartz.md)
 
 
 
